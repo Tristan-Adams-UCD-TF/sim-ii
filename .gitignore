@@ -1,0 +1,36 @@
+# Database credentials (contains passwords)
+includes/classes/dbDefaults.php
+
+# Executables (should be built/downloaded separately)
+*.exe
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# PHP session files
+sess_*
+
+# Uploaded/generated content (these live outside the repo in production)
+# Uncomment if these ever appear in the repo:
+# /uploads/
+# /temp/
