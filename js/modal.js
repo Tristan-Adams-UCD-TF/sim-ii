@@ -1108,7 +1108,197 @@ console.dir(params);
 				}
 			});
 		},
-		
+
+		rightEye: function() {
+			$.ajax({
+				url: BROWSER_AJAX + 'ajaxGetEyeControlContent.php',
+				type: 'post',
+				async: false,
+				dataType: 'json',
+				data: {
+					'side': 'right',
+					'state': controls.eyes.right.state,
+					'lid': controls.eyes.right.lid,
+					'move': controls.eyes.right.move,
+					'position': controls.eyes.right.position,
+					'blink': controls.eyes.right.blink,
+					'pupil': controls.eyes.right.pupil
+				},
+				success: function(response) {
+					if(response.status == AJAX_STATUS_OK) {
+						modal.showModal(response);
+						$('#modal .container').css('width', '350px');
+						$('#modal .container .control-modal-div').css('width', '350px');
+
+						// Initialize pupil slider
+						$('#pupil-slider').slider({
+							min: 5,
+							max: 90,
+							step: 5,
+							value: response.pupil,
+							slide: function(event, ui) {
+								$('#pupil-value').html(ui.value);
+							}
+						});
+
+						// Apply button
+						$('button.apply').click(function() {
+							controls.eyes.right.state = $('#eye-state-select').val();
+							controls.eyes.right.lid = $('#eye-lid-select').val();
+							controls.eyes.right.move = $('#eye-move-select').val();
+							controls.eyes.right.position = $('#eye-position-select').val();
+							controls.eyes.right.blink = $('#eye-blink-select').val();
+							controls.eyes.right.pupil = $('#pupil-slider').slider('value');
+
+							simmgr.sendChange({'set:eyes:right_state': controls.eyes.right.state});
+							simmgr.sendChange({'set:eyes:right_lid': controls.eyes.right.lid});
+							simmgr.sendChange({'set:eyes:right_move': controls.eyes.right.move});
+							simmgr.sendChange({'set:eyes:right_position': controls.eyes.right.position});
+							simmgr.sendChange({'set:eyes:right_blink': controls.eyes.right.blink});
+							simmgr.sendChange({'set:eyes:right_pupil': controls.eyes.right.pupil});
+							simmgr.sendChange({'set:eyes:send_command': 1});
+							modal.closeModal();
+						});
+
+						// Sync button - copy right eye to left eye
+						$('button.sync').click(function() {
+							var state = $('#eye-state-select').val();
+							var lid = $('#eye-lid-select').val();
+							var move = $('#eye-move-select').val();
+							var position = $('#eye-position-select').val();
+							var blink = $('#eye-blink-select').val();
+							var pupil = $('#pupil-slider').slider('value');
+
+							controls.eyes.right.state = state;
+							controls.eyes.right.lid = lid;
+							controls.eyes.right.move = move;
+							controls.eyes.right.position = position;
+							controls.eyes.right.blink = blink;
+							controls.eyes.right.pupil = pupil;
+							controls.eyes.left.state = state;
+							controls.eyes.left.lid = lid;
+							controls.eyes.left.move = move;
+							controls.eyes.left.position = position;
+							controls.eyes.left.blink = blink;
+							controls.eyes.left.pupil = pupil;
+
+							simmgr.sendChange({'set:eyes:right_state': state});
+							simmgr.sendChange({'set:eyes:right_lid': lid});
+							simmgr.sendChange({'set:eyes:right_move': move});
+							simmgr.sendChange({'set:eyes:right_position': position});
+							simmgr.sendChange({'set:eyes:right_blink': blink});
+							simmgr.sendChange({'set:eyes:right_pupil': pupil});
+							simmgr.sendChange({'set:eyes:left_state': state});
+							simmgr.sendChange({'set:eyes:left_lid': lid});
+							simmgr.sendChange({'set:eyes:left_move': move});
+							simmgr.sendChange({'set:eyes:left_position': position});
+							simmgr.sendChange({'set:eyes:left_blink': blink});
+							simmgr.sendChange({'set:eyes:left_pupil': pupil});
+							simmgr.sendChange({'set:eyes:send_command': 1});
+							modal.closeModal();
+						});
+
+						modal.bindCloseModal();
+					}
+				}
+			});
+		},
+
+		leftEye: function() {
+			$.ajax({
+				url: BROWSER_AJAX + 'ajaxGetEyeControlContent.php',
+				type: 'post',
+				async: false,
+				dataType: 'json',
+				data: {
+					'side': 'left',
+					'state': controls.eyes.left.state,
+					'lid': controls.eyes.left.lid,
+					'move': controls.eyes.left.move,
+					'position': controls.eyes.left.position,
+					'blink': controls.eyes.left.blink,
+					'pupil': controls.eyes.left.pupil
+				},
+				success: function(response) {
+					if(response.status == AJAX_STATUS_OK) {
+						modal.showModal(response);
+						$('#modal .container').css('width', '350px');
+						$('#modal .container .control-modal-div').css('width', '350px');
+
+						// Initialize pupil slider
+						$('#pupil-slider').slider({
+							min: 5,
+							max: 90,
+							step: 5,
+							value: response.pupil,
+							slide: function(event, ui) {
+								$('#pupil-value').html(ui.value);
+							}
+						});
+
+						// Apply button
+						$('button.apply').click(function() {
+							controls.eyes.left.state = $('#eye-state-select').val();
+							controls.eyes.left.lid = $('#eye-lid-select').val();
+							controls.eyes.left.move = $('#eye-move-select').val();
+							controls.eyes.left.position = $('#eye-position-select').val();
+							controls.eyes.left.blink = $('#eye-blink-select').val();
+							controls.eyes.left.pupil = $('#pupil-slider').slider('value');
+
+							simmgr.sendChange({'set:eyes:left_state': controls.eyes.left.state});
+							simmgr.sendChange({'set:eyes:left_lid': controls.eyes.left.lid});
+							simmgr.sendChange({'set:eyes:left_move': controls.eyes.left.move});
+							simmgr.sendChange({'set:eyes:left_position': controls.eyes.left.position});
+							simmgr.sendChange({'set:eyes:left_blink': controls.eyes.left.blink});
+							simmgr.sendChange({'set:eyes:left_pupil': controls.eyes.left.pupil});
+							simmgr.sendChange({'set:eyes:send_command': 1});
+							modal.closeModal();
+						});
+
+						// Sync button - copy left eye to right eye
+						$('button.sync').click(function() {
+							var state = $('#eye-state-select').val();
+							var lid = $('#eye-lid-select').val();
+							var move = $('#eye-move-select').val();
+							var position = $('#eye-position-select').val();
+							var blink = $('#eye-blink-select').val();
+							var pupil = $('#pupil-slider').slider('value');
+
+							controls.eyes.left.state = state;
+							controls.eyes.left.lid = lid;
+							controls.eyes.left.move = move;
+							controls.eyes.left.position = position;
+							controls.eyes.left.blink = blink;
+							controls.eyes.left.pupil = pupil;
+							controls.eyes.right.state = state;
+							controls.eyes.right.lid = lid;
+							controls.eyes.right.move = move;
+							controls.eyes.right.position = position;
+							controls.eyes.right.blink = blink;
+							controls.eyes.right.pupil = pupil;
+
+							simmgr.sendChange({'set:eyes:left_state': state});
+							simmgr.sendChange({'set:eyes:left_lid': lid});
+							simmgr.sendChange({'set:eyes:left_move': move});
+							simmgr.sendChange({'set:eyes:left_position': position});
+							simmgr.sendChange({'set:eyes:left_blink': blink});
+							simmgr.sendChange({'set:eyes:left_pupil': pupil});
+							simmgr.sendChange({'set:eyes:right_state': state});
+							simmgr.sendChange({'set:eyes:right_lid': lid});
+							simmgr.sendChange({'set:eyes:right_move': move});
+							simmgr.sendChange({'set:eyes:right_position': position});
+							simmgr.sendChange({'set:eyes:right_blink': blink});
+							simmgr.sendChange({'set:eyes:right_pupil': pupil});
+							simmgr.sendChange({'set:eyes:send_command': 1});
+							modal.closeModal();
+						});
+
+						modal.bindCloseModal();
+					}
+				}
+			});
+		},
+
 		showLog: function() {
 			var response = {
 				html: '<h1 id="modal-title">Event Log</h1>' + 

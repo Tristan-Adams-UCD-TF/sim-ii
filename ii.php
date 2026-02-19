@@ -476,6 +476,12 @@ console.log(controls['awRR'].increment);
 					<a class="control-title" id="chest-dog-control-title" href="javascript: void(2)" onclick="modal.chestRise(); return false;">Chest Movement</a>
 					<a class="control-tele-sim" id="chest-dog-control-icon" href="javascript: void(2);" onclick="modal.chestRise(); return false;"><img src="" width="" title=""></a>
 				</div>
+				<div id="right-eye-dog-control" class="dog-control" style="display:none;">
+					<a class="control-title" id="right-eye-dog-control-title" href="javascript: void(2)" onclick="modal.rightEye(); return false;">Right Eye</a>
+				</div>
+				<div id="left-eye-dog-control" class="dog-control" style="display:none;">
+					<a class="control-title" id="left-eye-dog-control-title" href="javascript: void(2)" onclick="modal.leftEye(); return false;">Left Eye</a>
+				</div>
 			</div>
 			
 			<div id="vsm" class="float-left ii-border">

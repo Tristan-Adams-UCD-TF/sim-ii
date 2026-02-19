@@ -13,7 +13,27 @@ See gpl.html
 			last: -1,			// count of defib to flag a new defib cycle, -1 indicates uninitialized...
 			shock: 0			// currently in defib cycle...
 		},
-		
+
+		eyes: {
+			connected: false,
+			right: {
+				state: 0,      // 0=Normal, 1=Obtunded, 2=Miotic, 3=Dilated
+				lid: 0,        // 0=Open, 1=Closed, 2=Partial
+				move: 0,       // 0=Normal, 1=InfreqSlow, 2=None
+				position: 0,   // 0=Center, 1=R, 2=L, 3=U, 4=D
+				blink: 0,      // 0=Normal, 1=InfreqSlow, 2=PartialInfreq, 3=None
+				pupil: 70      // 5-90 (percent)
+			},
+			left: {
+				state: 0,
+				lid: 0,
+				move: 0,
+				position: 0,
+				blink: 0,
+				pupil: 70
+			}
+		},
+
 		heartRate: {
 			value: 75,
 			avg_rate: 0,			// rolling average as reported by sim mgr

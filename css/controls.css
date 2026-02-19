@@ -27,6 +27,14 @@ See gpl.html
 		top: 155px;
 		left: 300px;
 	}
+	#right-eye-dog-control {
+		top: 30px;
+		left: 160px;
+	}
+	#left-eye-dog-control {
+		top: 30px;
+		left: 300px;
+	}
 	
 .dog-control {
 	position: absolute;

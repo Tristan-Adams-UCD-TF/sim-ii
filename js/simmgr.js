@@ -572,6 +572,60 @@ console.log('defib: here');
 					
 				}
 
+				/************ eyes **************/
+				if(typeof(response.eyes) != "undefined") {
+					// Eyes connected status
+					if(typeof(response.eyes.connected) != "undefined") {
+						if(response.eyes.connected == 1) {
+							controls.eyes.connected = true;
+							$('#right-eye-dog-control').show();
+							$('#left-eye-dog-control').show();
+						} else {
+							controls.eyes.connected = false;
+							$('#right-eye-dog-control').hide();
+							$('#left-eye-dog-control').hide();
+						}
+					}
+
+					// Update local state from response
+					if(typeof(response.eyes.right_state) != "undefined") {
+						controls.eyes.right.state = response.eyes.right_state;
+					}
+					if(typeof(response.eyes.right_lid) != "undefined") {
+						controls.eyes.right.lid = response.eyes.right_lid;
+					}
+					if(typeof(response.eyes.right_move) != "undefined") {
+						controls.eyes.right.move = response.eyes.right_move;
+					}
+					if(typeof(response.eyes.right_position) != "undefined") {
+						controls.eyes.right.position = response.eyes.right_position;
+					}
+					if(typeof(response.eyes.right_blink) != "undefined") {
+						controls.eyes.right.blink = response.eyes.right_blink;
+					}
+					if(typeof(response.eyes.right_pupil) != "undefined") {
+						controls.eyes.right.pupil = response.eyes.right_pupil;
+					}
+					if(typeof(response.eyes.left_state) != "undefined") {
+						controls.eyes.left.state = response.eyes.left_state;
+					}
+					if(typeof(response.eyes.left_lid) != "undefined") {
+						controls.eyes.left.lid = response.eyes.left_lid;
+					}
+					if(typeof(response.eyes.left_move) != "undefined") {
+						controls.eyes.left.move = response.eyes.left_move;
+					}
+					if(typeof(response.eyes.left_position) != "undefined") {
+						controls.eyes.left.position = response.eyes.left_position;
+					}
+					if(typeof(response.eyes.left_blink) != "undefined") {
+						controls.eyes.left.blink = response.eyes.left_blink;
+					}
+					if(typeof(response.eyes.left_pupil) != "undefined") {
+						controls.eyes.left.pupil = response.eyes.left_pupil;
+					}
+				}
+
 				/************ vocals **************/
 				if(typeof(response.vocals) != "undefined" ) {
 					// filename
