@@ -145,6 +145,25 @@ See gpl.html
 	.modal-button.cancel {
 		margin-left: 40px;
 	}
+
+	.eye-button-row {
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.eye-button-row .modal-button {
+		margin: 10px 0 0 0;
+	}
+	.eye-state-controls {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+	}
+	.modal-button-small {
+		padding: 3px 10px;
+		font-size: 12px;
+		margin: 0;
+	}
 	
 	/* vocal */
 	#vocal-list {
@@ -296,7 +315,17 @@ See gpl.html
 		width: 150px;
 		margin: 1px 0 0 7px;
 	}
-	
+
+	.eye-pupil-control {
+		text-align: center;
+		padding-bottom: 10px;
+	}
+	.eye-pupil-control .control-slider-1 {
+		float: none;
+		width: 200px;
+		margin: 10px auto 0;
+	}
+
 	.ui-slider .ui-slider-handle {
 		margin-top: -2px;
 		width: 25px;

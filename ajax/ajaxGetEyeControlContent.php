@@ -62,8 +62,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 	// Lid options
 	$lidOptions = array(
 		"Open" => 0,
-		"Closed" => 1,
-		"Partial" => 2
+		"Partial" => 1,
+		"Closed" => 2
 	);
 
 	$lidSelect = '<select id="eye-lid-select" class="modal-select">';
@@ -129,7 +129,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 
 		<div class="control-modal-div">
 			<h2 class="modal-section-title">Neurological State</h2>
-			' . $stateSelect . '
+			<div class="eye-state-controls">
+				' . $stateSelect . '
+				<button id="eye-set-defaults" class="red-button modal-button-small">Set Defaults</button>
+			</div>
 		</div>
 
 		<div class="control-modal-div">
@@ -153,17 +156,17 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 		</div>
 
 		<hr class="modal-divider">
-		<div class="control-modal-div">
+		<div class="control-modal-div eye-pupil-control">
 			<p id="pupil-title">Pupil Size: <span id="pupil-value">' . $pupil . '</span>%</p>
-			<div value="' . $pupil . '" id="pupil-slider" class="control-slider-1 float-left" data-highlight="true"></div>
+			<div value="' . $pupil . '" id="pupil-slider" class="control-slider-1" data-highlight="true"></div>
 			<div class="clearer"></div>
 		</div>
 
 		<hr class="modal-divider">
-		<div class="control-modal-div">
+		<div class="control-modal-div eye-button-row">
 			<button class="red-button modal-button apply">Apply</button>
-			<button class="red-button modal-button sync">Sync Eyes</button>
-			<button class="red-button modal-button cancel">Cancel</button>
+			<button class="red-button modal-button sync">Apply Both</button>
+			<button class="red-button modal-button cancel">Close</button>
 		</div>
 	';
 

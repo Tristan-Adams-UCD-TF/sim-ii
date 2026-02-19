@@ -31,6 +31,12 @@ See gpl.html
 				position: 0,
 				blink: 0,
 				pupil: 70
+			},
+			defaults: {
+				0: { lid: 0, move: 0, position: 0, blink: 0, pupil: 70 },  // Normal
+				1: { lid: 1, move: 1, position: 0, blink: 2, pupil: 50 },  // Obtunded
+				2: { lid: 1, move: 2, position: 0, blink: 3, pupil: 20 },  // Miotic
+				3: { lid: 1, move: 2, position: 0, blink: 3, pupil: 85 }   // Dilated
 			}
 		},
 

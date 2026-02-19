@@ -1141,6 +1141,20 @@ console.dir(params);
 							}
 						});
 
+						// Set Defaults button
+						$('#eye-set-defaults').click(function() {
+							var stateVal = $('#eye-state-select').val();
+							var defs = controls.eyes.defaults[stateVal];
+							if (defs) {
+								$('#eye-lid-select').val(defs.lid);
+								$('#eye-move-select').val(defs.move);
+								$('#eye-position-select').val(defs.position);
+								$('#eye-blink-select').val(defs.blink);
+								$('#pupil-slider').slider('value', defs.pupil);
+								$('#pupil-value').html(defs.pupil);
+							}
+						});
+
 						// Apply button
 						$('button.apply').click(function() {
 							controls.eyes.right.state = $('#eye-state-select').val();
@@ -1157,7 +1171,6 @@ console.dir(params);
 							simmgr.sendChange({'set:eyes:right_blink': controls.eyes.right.blink});
 							simmgr.sendChange({'set:eyes:right_pupil': controls.eyes.right.pupil});
 							simmgr.sendChange({'set:eyes:send_command': 1});
-							modal.closeModal();
 						});
 
 						// Sync button - copy right eye to left eye
@@ -1195,7 +1208,6 @@ console.dir(params);
 							simmgr.sendChange({'set:eyes:left_blink': blink});
 							simmgr.sendChange({'set:eyes:left_pupil': pupil});
 							simmgr.sendChange({'set:eyes:send_command': 1});
-							modal.closeModal();
 						});
 
 						modal.bindCloseModal();
@@ -1236,6 +1248,20 @@ console.dir(params);
 							}
 						});
 
+						// Set Defaults button
+						$('#eye-set-defaults').click(function() {
+							var stateVal = $('#eye-state-select').val();
+							var defs = controls.eyes.defaults[stateVal];
+							if (defs) {
+								$('#eye-lid-select').val(defs.lid);
+								$('#eye-move-select').val(defs.move);
+								$('#eye-position-select').val(defs.position);
+								$('#eye-blink-select').val(defs.blink);
+								$('#pupil-slider').slider('value', defs.pupil);
+								$('#pupil-value').html(defs.pupil);
+							}
+						});
+
 						// Apply button
 						$('button.apply').click(function() {
 							controls.eyes.left.state = $('#eye-state-select').val();
@@ -1252,7 +1278,6 @@ console.dir(params);
 							simmgr.sendChange({'set:eyes:left_blink': controls.eyes.left.blink});
 							simmgr.sendChange({'set:eyes:left_pupil': controls.eyes.left.pupil});
 							simmgr.sendChange({'set:eyes:send_command': 1});
-							modal.closeModal();
 						});
 
 						// Sync button - copy left eye to right eye
@@ -1290,7 +1315,6 @@ console.dir(params);
 							simmgr.sendChange({'set:eyes:right_blink': blink});
 							simmgr.sendChange({'set:eyes:right_pupil': pupil});
 							simmgr.sendChange({'set:eyes:send_command': 1});
-							modal.closeModal();
 						});
 
 						modal.bindCloseModal();
