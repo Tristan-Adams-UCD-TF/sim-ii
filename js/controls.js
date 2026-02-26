@@ -44,7 +44,7 @@ See gpl.html
 				0: { lid: 0, move: 0, position: 0, blink: 0, pupil: 70, plr: 0, menace: 1, palpebral: 1, nystagmus: 0 },  // Normal
 				1: { lid: 1, move: 1, position: 0, blink: 2, pupil: 50, plr: 0, menace: 2, palpebral: 1, nystagmus: 0 },  // Obtunded
 				2: { lid: 1, move: 2, position: 0, blink: 3, pupil: 20, plr: 2, menace: 0, palpebral: 2, nystagmus: 1 },  // Miotic
-				3: { lid: 1, move: 2, position: 0, blink: 3, pupil: 85, plr: 2, menace: 0, palpebral: 0, nystagmus: 2 }   // Dilated
+				3: { lid: 1, move: 2, position: 0, blink: 3, pupil: 85, plr: 2, menace: 0, palpebral: 0, nystagmus: 3 }   // Dilated
 			}
 		},
 

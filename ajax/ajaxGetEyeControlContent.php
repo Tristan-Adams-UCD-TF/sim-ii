@@ -158,11 +158,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 	}
 	$palpebralSelect .= '</select>';
 
-	// Nystagmus options (NystagmusResponse: 0=Normal, 1=Slow, 2=None)
+	// Nystagmus options (NystagmusResponse: 0=Normal, 1=Slow, 2=Very Slow, 3=None)
 	$nystagmusOptions = array(
-		"Normal" => 0,
-		"Slow" => 1,
-		"None" => 2
+		"Normal"    => 0,
+		"Slow"      => 1,
+		"Very Slow" => 2,
+		"None"      => 3
 	);
 
 	$nystagmusSelect = '<select id="eye-nystagmus-select" class="modal-select">';
