@@ -22,7 +22,11 @@ See gpl.html
 				move: 0,       // 0=Normal, 1=InfreqSlow, 2=None
 				position: 0,   // 0=Center, 1=R, 2=L, 3=U, 4=D
 				blink: 0,      // 0=Normal, 1=InfreqSlow, 2=PartialInfreq, 3=None
-				pupil: 70      // 5-90 (percent)
+				pupil: 70,     // 5-90 (percent)
+			plr: 0,        // 0=Normal, 1=Partial, 2=None
+			menace: 1,     // 0=None, 1=Normal, 2=SlowPartial
+			palpebral: 1,  // 0=None, 1=Normal, 2=SlowPartial
+			nystagmus: 0   // 0=Normal, 1=Slow, 2=None
 			},
 			left: {
 				state: 0,
@@ -30,13 +34,17 @@ See gpl.html
 				move: 0,
 				position: 0,
 				blink: 0,
-				pupil: 70
+				pupil: 70,
+			plr: 0,
+			menace: 1,
+			palpebral: 1,
+			nystagmus: 0
 			},
 			defaults: {
-				0: { lid: 0, move: 0, position: 0, blink: 0, pupil: 70 },  // Normal
-				1: { lid: 1, move: 1, position: 0, blink: 2, pupil: 50 },  // Obtunded
-				2: { lid: 1, move: 2, position: 0, blink: 3, pupil: 20 },  // Miotic
-				3: { lid: 1, move: 2, position: 0, blink: 3, pupil: 85 }   // Dilated
+				0: { lid: 0, move: 0, position: 0, blink: 0, pupil: 70, plr: 0, menace: 1, palpebral: 1, nystagmus: 0 },  // Normal
+				1: { lid: 1, move: 1, position: 0, blink: 2, pupil: 50, plr: 0, menace: 2, palpebral: 1, nystagmus: 0 },  // Obtunded
+				2: { lid: 1, move: 2, position: 0, blink: 3, pupil: 20, plr: 2, menace: 0, palpebral: 2, nystagmus: 1 },  // Miotic
+				3: { lid: 1, move: 2, position: 0, blink: 3, pupil: 85, plr: 2, menace: 0, palpebral: 0, nystagmus: 2 }   // Dilated
 			}
 		},
 

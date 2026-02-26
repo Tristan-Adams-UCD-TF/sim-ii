@@ -623,6 +623,30 @@ console.log('defib: here');
 					}
 					if(typeof(response.eyes.left_pupil) != "undefined") {
 						controls.eyes.left.pupil = response.eyes.left_pupil;
+				}
+				if(typeof(response.eyes.right_plr) != "undefined") {
+					controls.eyes.right.plr = response.eyes.right_plr;
+				}
+				if(typeof(response.eyes.right_menace) != "undefined") {
+					controls.eyes.right.menace = response.eyes.right_menace;
+				}
+				if(typeof(response.eyes.right_palpebral) != "undefined") {
+					controls.eyes.right.palpebral = response.eyes.right_palpebral;
+				}
+				if(typeof(response.eyes.right_nystagmus) != "undefined") {
+					controls.eyes.right.nystagmus = response.eyes.right_nystagmus;
+				}
+				if(typeof(response.eyes.left_plr) != "undefined") {
+					controls.eyes.left.plr = response.eyes.left_plr;
+				}
+				if(typeof(response.eyes.left_menace) != "undefined") {
+					controls.eyes.left.menace = response.eyes.left_menace;
+				}
+				if(typeof(response.eyes.left_palpebral) != "undefined") {
+					controls.eyes.left.palpebral = response.eyes.left_palpebral;
+				}
+				if(typeof(response.eyes.left_nystagmus) != "undefined") {
+					controls.eyes.left.nystagmus = response.eyes.left_nystagmus;
 					}
 				}
 

@@ -43,6 +43,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 	$position = dbClass::valuesFromPost('position');
 	$blink = dbClass::valuesFromPost('blink');
 	$pupil = dbClass::valuesFromPost('pupil');
+	$plr = dbClass::valuesFromPost('plr');
+	$menace = dbClass::valuesFromPost('menace');
+	$palpebral = dbClass::valuesFromPost('palpebral');
+	$nystagmus = dbClass::valuesFromPost('nystagmus');
 
 	// State options
 	$stateOptions = array(
@@ -118,6 +122,56 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 	}
 	$blinkSelect .= '</select>';
 
+	// PLR options (PlrResponse: 0=Normal, 1=Partial, 2=None)
+	$plrOptions = array(
+		"Normal" => 0,
+		"Partial" => 1,
+		"None" => 2
+	);
+
+	$plrSelect = '<select id="eye-plr-select" class="modal-select">';
+	foreach($plrOptions as $label => $value) {
+		$selected = ($plr == $value) ? ' selected="selected"' : '';
+		$plrSelect .= '<option value="' . $value . '"' . $selected . '>' . $label . '</option>';
+	}
+	$plrSelect .= '</select>';
+
+	// Menace options (BlinkEvent: 0=None, 1=Normal, 2=SlowPartial)
+	$menaceOptions = array(
+		"None" => 0,
+		"Normal" => 1,
+		"Slow/Partial" => 2
+	);
+
+	$menaceSelect = '<select id="eye-menace-select" class="modal-select">';
+	foreach($menaceOptions as $label => $value) {
+		$selected = ($menace == $value) ? ' selected="selected"' : '';
+		$menaceSelect .= '<option value="' . $value . '"' . $selected . '>' . $label . '</option>';
+	}
+	$menaceSelect .= '</select>';
+
+	// Palpebral options (BlinkEvent: same as menace)
+	$palpebralSelect = '<select id="eye-palpebral-select" class="modal-select">';
+	foreach($menaceOptions as $label => $value) {
+		$selected = ($palpebral == $value) ? ' selected="selected"' : '';
+		$palpebralSelect .= '<option value="' . $value . '"' . $selected . '>' . $label . '</option>';
+	}
+	$palpebralSelect .= '</select>';
+
+	// Nystagmus options (NystagmusResponse: 0=Normal, 1=Slow, 2=None)
+	$nystagmusOptions = array(
+		"Normal" => 0,
+		"Slow" => 1,
+		"None" => 2
+	);
+
+	$nystagmusSelect = '<select id="eye-nystagmus-select" class="modal-select">';
+	foreach($nystagmusOptions as $label => $value) {
+		$selected = ($nystagmus == $value) ? ' selected="selected"' : '';
+		$nystagmusSelect .= '<option value="' . $value . '"' . $selected . '>' . $label . '</option>';
+	}
+	$nystagmusSelect .= '</select>';
+
 	// Default pupil value
 	if($pupil == '' || $pupil < 5 || $pupil > 90) {
 		$pupil = 70;
@@ -135,24 +189,23 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 			</div>
 		</div>
 
-		<div class="control-modal-div">
-			<h2 class="modal-section-title">Lid Position</h2>
-			' . $lidSelect . '
-		</div>
-
-		<div class="control-modal-div">
-			<h2 class="modal-section-title">Movement</h2>
-			' . $moveSelect . '
-		</div>
-
-		<div class="control-modal-div">
-			<h2 class="modal-section-title">Eye Position</h2>
-			' . $posSelect . '
-		</div>
-
-		<div class="control-modal-div">
-			<h2 class="modal-section-title">Blink Pattern</h2>
-			' . $blinkSelect . '
+		<div class="eye-col-container">
+			<div class="eye-two-col">
+				<div class="eye-col">
+					<h2 class="modal-section-title">Direct Outputs</h2>
+					<div class="eye-col-row"><span class="eye-col-label">Lid:</span>' . $lidSelect . '</div>
+					<div class="eye-col-row"><span class="eye-col-label">Movement:</span>' . $moveSelect . '</div>
+					<div class="eye-col-row"><span class="eye-col-label">Position:</span>' . $posSelect . '</div>
+					<div class="eye-col-row"><span class="eye-col-label">Blink:</span>' . $blinkSelect . '</div>
+				</div>
+				<div class="eye-col">
+					<h2 class="modal-section-title">Input Responses</h2>
+					<div class="eye-col-row"><span class="eye-col-label">PLR:</span>' . $plrSelect . '</div>
+					<div class="eye-col-row"><span class="eye-col-label">Menace:</span>' . $menaceSelect . '</div>
+					<div class="eye-col-row"><span class="eye-col-label">Palpebral:</span>' . $palpebralSelect . '</div>
+					<div class="eye-col-row"><span class="eye-col-label">Nystagmus:</span>' . $nystagmusSelect . '</div>
+				</div>
+			</div>
 		</div>
 
 		<hr class="modal-divider">
