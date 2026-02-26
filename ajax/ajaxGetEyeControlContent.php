@@ -52,8 +52,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 	$stateOptions = array(
 		"Normal" => 0,
 		"Obtunded" => 1,
-		"Miotic" => 2,
-		"Dilated" => 3
+		"Stuporous" => 2,  // aka "Miotic"
+		"Comatose" => 3    // aka "Dilated"
 	);
 
 	$stateSelect = '<select id="eye-state-select" class="modal-select">';
@@ -111,7 +111,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 	$blinkOptions = array(
 		"Normal" => 0,
 		"Infrequent Slow" => 1,
-		"Partial Infrequent" => 2,
+		"Partial Infrequent Slow" => 2,
 		"None" => 3
 	);
 
@@ -138,9 +138,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 
 	// Menace options (BlinkEvent: 0=None, 1=Normal, 2=SlowPartial)
 	$menaceOptions = array(
-		"None" => 0,
 		"Normal" => 1,
-		"Slow/Partial" => 2
+		"Slow Partial" => 2,
+		"None" => 0
 	);
 
 	$menaceSelect = '<select id="eye-menace-select" class="modal-select">';

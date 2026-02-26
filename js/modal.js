@@ -1131,7 +1131,7 @@ console.dir(params);
 				success: function(response) {
 					if(response.status == AJAX_STATUS_OK) {
 						modal.showModal(response);
-						$('#modal .container').css('width', '520px');
+						$('#modal .container').css('width', '400px');
 						$('#modal .container .control-modal-div').css('width', '350px');
 
 						// Initialize pupil slider
@@ -1278,7 +1278,7 @@ console.dir(params);
 				success: function(response) {
 					if(response.status == AJAX_STATUS_OK) {
 						modal.showModal(response);
-						$('#modal .container').css('width', '520px');
+						$('#modal .container').css('width', '400px');
 						$('#modal .container .control-modal-div').css('width', '350px');
 
 						// Initialize pupil slider

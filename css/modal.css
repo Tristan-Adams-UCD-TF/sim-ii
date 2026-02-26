@@ -166,12 +166,12 @@ See gpl.html
 	}
 	
 	.eye-col-container {
-		width: 490px;
+		width: 340px;
 		margin: 0 auto;
 	}
 	.eye-two-col {
 		display: flex;
-		gap: 10px;
+		gap: 40px;
 		justify-content: center;
 	}
 	.eye-col {
@@ -179,15 +179,13 @@ See gpl.html
 		min-width: 0;
 	}
 	.eye-col .modal-section-title {
-		font-size: 13px;
 		margin: 6px 0 4px 0;
 	}
 	.eye-col-row {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin-bottom: 4px;
-		font-size: 12px;
+		margin-bottom: 8px;
 	}
 	.eye-col-label {
 		margin-right: 6px;
@@ -196,7 +194,6 @@ See gpl.html
 	.eye-col .modal-select {
 		flex: 1;
 		min-width: 0;
-		font-size: 12px;
 		margin-top: 0;
 	}
 
