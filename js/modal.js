@@ -1545,6 +1545,12 @@ console.dir(params);
 				}
 			);
 		},
+		showEyesDisconnected: function() {
+			var content = '<h1 class="eyes-disconnected-title">Eyes Disconnected</h1>' +
+				'<button class="red-button modal-button cancel" style="margin-top: 15px;">OK</button>';
+			modal.showText(content);
+		},
+
 		closeModalFast: function() {
 			$('#modal').hide();
 			$('#modal-content').empty();

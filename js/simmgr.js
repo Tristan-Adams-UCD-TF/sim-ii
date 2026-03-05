@@ -576,6 +576,7 @@ console.log('defib: here');
 				if(typeof(response.eyes) != "undefined") {
 					// Eyes connected status
 					if(typeof(response.eyes.connected) != "undefined") {
+						var wasConnected = controls.eyes.connected;
 						if(response.eyes.connected == 1) {
 							controls.eyes.connected = true;
 							$('#right-eye-dog-control').show();
@@ -584,6 +585,12 @@ console.log('defib: here');
 							controls.eyes.connected = false;
 							$('#right-eye-dog-control').hide();
 							$('#left-eye-dog-control').hide();
+							if (wasConnected === true) {
+								if ($('#modal').is(':visible') && $('#eye-state-select').length > 0) {
+									modal.closeModalFast();
+								}
+								modal.showEyesDisconnected();
+							}
 						}
 					}
 
