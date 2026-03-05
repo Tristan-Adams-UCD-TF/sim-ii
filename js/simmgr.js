@@ -588,8 +588,8 @@ console.log('defib: here');
 							if (wasConnected === true) {
 								if ($('#modal').is(':visible') && $('#eye-state-select').length > 0) {
 									modal.closeModalFast();
+									modal.showEyesDisconnected();
 								}
-								modal.showEyesDisconnected();
 							}
 						}
 					}
