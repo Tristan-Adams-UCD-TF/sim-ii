@@ -579,8 +579,8 @@ console.log('defib: here');
 						var wasConnected = controls.eyes.connected;
 						if(response.eyes.connected == 1) {
 							controls.eyes.connected = true;
-							$('#right-eye-dog-control').show();
-							$('#left-eye-dog-control').show();
+							if (controls.eyes.rightInScenario) $('#right-eye-dog-control').show();
+							if (controls.eyes.leftInScenario) $('#left-eye-dog-control').show();
 						} else {
 							controls.eyes.connected = false;
 							$('#right-eye-dog-control').hide();

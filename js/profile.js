@@ -27,6 +27,8 @@ See gpl.html
 				// set positioning of controls
 				// hide all controls
 				$('.dog-control').hide();
+				controls.eyes.rightInScenario = false;
+				controls.eyes.leftInScenario = false;
 				$.each(scenario.scenarioProfile.controls.control, function() {
 					var height = $('#' + this.id).height();
 					$('#' + this.id).css('left', this.left + 'px');
@@ -41,6 +43,16 @@ See gpl.html
 					$('#' + this.id + '-icon img').attr('width', this.width_telesim);
 					$('#' + this.id + '-icon img').attr('alt', this.attr_telesim);
 					$('#' + this.id + '-icon img').attr('title', this.title);					
+					// Eye buttons are shown/hidden by simmgr.js based on eyes.connected;
+					// just record that they are defined in this scenario.
+					if (this.id === 'right-eye-dog-control') {
+						controls.eyes.rightInScenario = true;
+						return;
+					}
+					if (this.id === 'left-eye-dog-control') {
+						controls.eyes.leftInScenario = true;
+						return;
+					}
 					$('#' + this.id).show();
 				});
 
