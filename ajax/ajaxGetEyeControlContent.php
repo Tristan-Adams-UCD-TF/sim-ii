@@ -186,7 +186,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 			<h2 class="modal-section-title">Neurological State</h2>
 			<div class="eye-state-controls">
 				' . $stateSelect . '
-				<button id="eye-set-defaults" class="red-button modal-button-small">Set Defaults</button>
 			</div>
 		</div>
 

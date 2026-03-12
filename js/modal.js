@@ -1145,23 +1145,33 @@ console.dir(params);
 							}
 						});
 
-						// Set Defaults button
-						$('#eye-set-defaults').click(function() {
-							var stateVal = $('#eye-state-select').val();
-							var defs = controls.eyes.defaults[stateVal];
-							if (defs) {
-								$('#eye-lid-select').val(defs.lid);
-								$('#eye-move-select').val(defs.move);
-								$('#eye-position-select').val(defs.position);
-								$('#eye-blink-select').val(defs.blink);
-								$('#pupil-slider').slider('value', defs.pupil);
-								$('#pupil-value').html(defs.pupil);
-							$('#eye-plr-select').val(defs.plr);
-							$('#eye-menace-select').val(defs.menace);
-							$('#eye-palpebral-select').val(defs.palpebral);
-							$('#eye-nystagmus-select').val(defs.nystagmus);
-							}
-						});
+						// Auto-apply defaults when neuro state is selected (including same-value re-selection)
+						var savedStateIndex;
+						$('#eye-state-select')
+							.on('mousedown', function() {
+								savedStateIndex = this.selectedIndex;
+								this.selectedIndex = -1;
+							})
+							.on('change', function() {
+								var defs = controls.eyes.defaults[$(this).val()];
+								if (defs) {
+									$('#eye-lid-select').val(defs.lid);
+									$('#eye-move-select').val(defs.move);
+									$('#eye-position-select').val(defs.position);
+									$('#eye-blink-select').val(defs.blink);
+									$('#pupil-slider').slider('value', defs.pupil);
+									$('#pupil-value').html(defs.pupil);
+									$('#eye-plr-select').val(defs.plr);
+									$('#eye-menace-select').val(defs.menace);
+									$('#eye-palpebral-select').val(defs.palpebral);
+									$('#eye-nystagmus-select').val(defs.nystagmus);
+								}
+							})
+							.on('blur', function() {
+								if (this.selectedIndex === -1) {
+									this.selectedIndex = savedStateIndex;
+								}
+							});
 
 						// Apply button
 						$('button.apply').click(function() {
@@ -1291,23 +1301,33 @@ console.dir(params);
 							}
 						});
 
-						// Set Defaults button
-						$('#eye-set-defaults').click(function() {
-							var stateVal = $('#eye-state-select').val();
-							var defs = controls.eyes.defaults[stateVal];
-							if (defs) {
-								$('#eye-lid-select').val(defs.lid);
-								$('#eye-move-select').val(defs.move);
-								$('#eye-position-select').val(defs.position);
-								$('#eye-blink-select').val(defs.blink);
-								$('#pupil-slider').slider('value', defs.pupil);
-								$('#pupil-value').html(defs.pupil);
-							$('#eye-plr-select').val(defs.plr);
-							$('#eye-menace-select').val(defs.menace);
-							$('#eye-palpebral-select').val(defs.palpebral);
-							$('#eye-nystagmus-select').val(defs.nystagmus);
-							}
-						});
+						// Auto-apply defaults when neuro state is selected (including same-value re-selection)
+						var savedStateIndex;
+						$('#eye-state-select')
+							.on('mousedown', function() {
+								savedStateIndex = this.selectedIndex;
+								this.selectedIndex = -1;
+							})
+							.on('change', function() {
+								var defs = controls.eyes.defaults[$(this).val()];
+								if (defs) {
+									$('#eye-lid-select').val(defs.lid);
+									$('#eye-move-select').val(defs.move);
+									$('#eye-position-select').val(defs.position);
+									$('#eye-blink-select').val(defs.blink);
+									$('#pupil-slider').slider('value', defs.pupil);
+									$('#pupil-value').html(defs.pupil);
+									$('#eye-plr-select').val(defs.plr);
+									$('#eye-menace-select').val(defs.menace);
+									$('#eye-palpebral-select').val(defs.palpebral);
+									$('#eye-nystagmus-select').val(defs.nystagmus);
+								}
+							})
+							.on('blur', function() {
+								if (this.selectedIndex === -1) {
+									this.selectedIndex = savedStateIndex;
+								}
+							});
 
 						// Apply button
 						$('button.apply').click(function() {
