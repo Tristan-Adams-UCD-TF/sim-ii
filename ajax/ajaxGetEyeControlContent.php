@@ -43,7 +43,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 	$position = dbClass::valuesFromPost('position');
 	$blink = dbClass::valuesFromPost('blink');
 	$pupil = dbClass::valuesFromPost('pupil');
-	$plr = dbClass::valuesFromPost('plr');
+	$plr_exposed = dbClass::valuesFromPost('plr_exposed');
+	$plr_consensual = dbClass::valuesFromPost('plr_consensual');
 	$menace = dbClass::valuesFromPost('menace');
 	$palpebral = dbClass::valuesFromPost('palpebral');
 	$nystagmus = dbClass::valuesFromPost('nystagmus');
@@ -129,12 +130,19 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 		"None" => 2
 	);
 
-	$plrSelect = '<select id="eye-plr-select" class="modal-select">';
+	$plrExposedSelect = '<select id="eye-plr-exposed-select" class="modal-select">';
 	foreach($plrOptions as $label => $value) {
-		$selected = ($plr == $value) ? ' selected="selected"' : '';
-		$plrSelect .= '<option value="' . $value . '"' . $selected . '>' . $label . '</option>';
+		$selected = ($plr_exposed == $value) ? ' selected="selected"' : '';
+		$plrExposedSelect .= '<option value="' . $value . '"' . $selected . '>' . $label . '</option>';
 	}
-	$plrSelect .= '</select>';
+	$plrExposedSelect .= '</select>';
+
+	$plrConsensualSelect = '<select id="eye-plr-consensual-select" class="modal-select">';
+	foreach($plrOptions as $label => $value) {
+		$selected = ($plr_consensual == $value) ? ' selected="selected"' : '';
+		$plrConsensualSelect .= '<option value="' . $value . '"' . $selected . '>' . $label . '</option>';
+	}
+	$plrConsensualSelect .= '</select>';
 
 	// Menace options (BlinkEvent: 0=None, 1=Normal, 2=SlowPartial)
 	$menaceOptions = array(
@@ -200,7 +208,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 				</div>
 				<div class="eye-col">
 					<h2 class="modal-section-title">Input Responses</h2>
-					<div class="eye-col-row"><span class="eye-col-label">PLR:</span>' . $plrSelect . '</div>
+					<div class="eye-col-row"><span class="eye-col-label">PLR Exposed:</span>' . $plrExposedSelect . '</div>
+					<div class="eye-col-row"><span class="eye-col-label">PLR Consensual:</span>' . $plrConsensualSelect . '</div>
 					<div class="eye-col-row"><span class="eye-col-label">Menace:</span>' . $menaceSelect . '</div>
 					<div class="eye-col-row"><span class="eye-col-label">Palpebral:</span>' . $palpebralSelect . '</div>
 					<div class="eye-col-row"><span class="eye-col-label">Nystagmus:</span>' . $nystagmusSelect . '</div>

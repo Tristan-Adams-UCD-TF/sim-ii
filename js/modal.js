@@ -1123,7 +1123,8 @@ console.dir(params);
 					'position': controls.eyes.right.position,
 					'blink': controls.eyes.right.blink,
 					'pupil': controls.eyes.right.pupil,
-					'plr': controls.eyes.right.plr,
+					'plr_exposed': controls.eyes.right.plr_exposed,
+					'plr_consensual': controls.eyes.right.plr_consensual,
 					'menace': controls.eyes.right.menace,
 					'palpebral': controls.eyes.right.palpebral,
 					'nystagmus': controls.eyes.right.nystagmus
@@ -1161,7 +1162,8 @@ console.dir(params);
 									$('#eye-blink-select').val(defs.blink);
 									$('#pupil-slider').slider('value', defs.pupil);
 									$('#pupil-value').html(defs.pupil);
-									$('#eye-plr-select').val(defs.plr);
+									$('#eye-plr-exposed-select').val(defs.plr_exposed);
+									$('#eye-plr-consensual-select').val(defs.plr_consensual);
 									$('#eye-menace-select').val(defs.menace);
 									$('#eye-palpebral-select').val(defs.palpebral);
 									$('#eye-nystagmus-select').val(defs.nystagmus);
@@ -1181,7 +1183,8 @@ console.dir(params);
 							controls.eyes.right.position = $('#eye-position-select').val();
 							controls.eyes.right.blink = $('#eye-blink-select').val();
 							controls.eyes.right.pupil = $('#pupil-slider').slider('value');
-						controls.eyes.right.plr = $('#eye-plr-select').val();
+						controls.eyes.right.plr_exposed = $('#eye-plr-exposed-select').val();
+						controls.eyes.right.plr_consensual = $('#eye-plr-consensual-select').val();
 						controls.eyes.right.menace = $('#eye-menace-select').val();
 						controls.eyes.right.palpebral = $('#eye-palpebral-select').val();
 						controls.eyes.right.nystagmus = $('#eye-nystagmus-select').val();
@@ -1192,7 +1195,8 @@ console.dir(params);
 							simmgr.sendChange({'set:eyes:right_position': controls.eyes.right.position});
 							simmgr.sendChange({'set:eyes:right_blink': controls.eyes.right.blink});
 							simmgr.sendChange({'set:eyes:right_pupil': controls.eyes.right.pupil});
-						simmgr.sendChange({'set:eyes:right_plr': controls.eyes.right.plr});
+						simmgr.sendChange({'set:eyes:right_plr_exposed': controls.eyes.right.plr_exposed});
+						simmgr.sendChange({'set:eyes:right_plr_consensual': controls.eyes.right.plr_consensual});
 						simmgr.sendChange({'set:eyes:right_menace': controls.eyes.right.menace});
 						simmgr.sendChange({'set:eyes:right_palpebral': controls.eyes.right.palpebral});
 						simmgr.sendChange({'set:eyes:right_nystagmus': controls.eyes.right.nystagmus});
@@ -1208,7 +1212,8 @@ console.dir(params);
 							var position = $('#eye-position-select').val();
 							var blink = $('#eye-blink-select').val();
 							var pupil = $('#pupil-slider').slider('value');
-						var plr = $('#eye-plr-select').val();
+						var plr_exposed = $('#eye-plr-exposed-select').val();
+						var plr_consensual = $('#eye-plr-consensual-select').val();
 						var menace = $('#eye-menace-select').val();
 						var palpebral = $('#eye-palpebral-select').val();
 						var nystagmus = $('#eye-nystagmus-select').val();
@@ -1219,7 +1224,8 @@ console.dir(params);
 						controls.eyes.right.position = position;
 						controls.eyes.right.blink = blink;
 						controls.eyes.right.pupil = pupil;
-						controls.eyes.right.plr = plr;
+						controls.eyes.right.plr_exposed = plr_exposed;
+						controls.eyes.right.plr_consensual = plr_consensual;
 						controls.eyes.right.menace = menace;
 						controls.eyes.right.palpebral = palpebral;
 						controls.eyes.right.nystagmus = nystagmus;
@@ -1229,7 +1235,8 @@ console.dir(params);
 						controls.eyes.left.position = position;
 						controls.eyes.left.blink = blink;
 						controls.eyes.left.pupil = pupil;
-						controls.eyes.left.plr = plr;
+						controls.eyes.left.plr_exposed = plr_exposed;
+						controls.eyes.left.plr_consensual = plr_consensual;
 						controls.eyes.left.menace = menace;
 						controls.eyes.left.palpebral = palpebral;
 						controls.eyes.left.nystagmus = nystagmus;
@@ -1247,11 +1254,13 @@ console.dir(params);
 						simmgr.sendChange({'set:eyes:left_position': position});
 						simmgr.sendChange({'set:eyes:left_blink': blink});
 						simmgr.sendChange({'set:eyes:left_pupil': pupil});
-						simmgr.sendChange({'set:eyes:right_plr': plr});
+						simmgr.sendChange({'set:eyes:right_plr_exposed': plr_exposed});
+						simmgr.sendChange({'set:eyes:right_plr_consensual': plr_consensual});
 						simmgr.sendChange({'set:eyes:right_menace': menace});
 						simmgr.sendChange({'set:eyes:right_palpebral': palpebral});
 						simmgr.sendChange({'set:eyes:right_nystagmus': nystagmus});
-						simmgr.sendChange({'set:eyes:left_plr': plr});
+						simmgr.sendChange({'set:eyes:left_plr_exposed': plr_exposed});
+						simmgr.sendChange({'set:eyes:left_plr_consensual': plr_consensual});
 						simmgr.sendChange({'set:eyes:left_menace': menace});
 						simmgr.sendChange({'set:eyes:left_palpebral': palpebral});
 						simmgr.sendChange({'set:eyes:left_nystagmus': nystagmus});
@@ -1279,7 +1288,8 @@ console.dir(params);
 					'position': controls.eyes.left.position,
 					'blink': controls.eyes.left.blink,
 					'pupil': controls.eyes.left.pupil,
-					'plr': controls.eyes.left.plr,
+					'plr_exposed': controls.eyes.left.plr_exposed,
+					'plr_consensual': controls.eyes.left.plr_consensual,
 					'menace': controls.eyes.left.menace,
 					'palpebral': controls.eyes.left.palpebral,
 					'nystagmus': controls.eyes.left.nystagmus
@@ -1317,7 +1327,8 @@ console.dir(params);
 									$('#eye-blink-select').val(defs.blink);
 									$('#pupil-slider').slider('value', defs.pupil);
 									$('#pupil-value').html(defs.pupil);
-									$('#eye-plr-select').val(defs.plr);
+									$('#eye-plr-exposed-select').val(defs.plr_exposed);
+									$('#eye-plr-consensual-select').val(defs.plr_consensual);
 									$('#eye-menace-select').val(defs.menace);
 									$('#eye-palpebral-select').val(defs.palpebral);
 									$('#eye-nystagmus-select').val(defs.nystagmus);
@@ -1337,7 +1348,8 @@ console.dir(params);
 							controls.eyes.left.position = $('#eye-position-select').val();
 							controls.eyes.left.blink = $('#eye-blink-select').val();
 							controls.eyes.left.pupil = $('#pupil-slider').slider('value');
-						controls.eyes.left.plr = $('#eye-plr-select').val();
+						controls.eyes.left.plr_exposed = $('#eye-plr-exposed-select').val();
+						controls.eyes.left.plr_consensual = $('#eye-plr-consensual-select').val();
 						controls.eyes.left.menace = $('#eye-menace-select').val();
 						controls.eyes.left.palpebral = $('#eye-palpebral-select').val();
 						controls.eyes.left.nystagmus = $('#eye-nystagmus-select').val();
@@ -1348,7 +1360,8 @@ console.dir(params);
 							simmgr.sendChange({'set:eyes:left_position': controls.eyes.left.position});
 							simmgr.sendChange({'set:eyes:left_blink': controls.eyes.left.blink});
 							simmgr.sendChange({'set:eyes:left_pupil': controls.eyes.left.pupil});
-						simmgr.sendChange({'set:eyes:left_plr': controls.eyes.left.plr});
+						simmgr.sendChange({'set:eyes:left_plr_exposed': controls.eyes.left.plr_exposed});
+						simmgr.sendChange({'set:eyes:left_plr_consensual': controls.eyes.left.plr_consensual});
 						simmgr.sendChange({'set:eyes:left_menace': controls.eyes.left.menace});
 						simmgr.sendChange({'set:eyes:left_palpebral': controls.eyes.left.palpebral});
 						simmgr.sendChange({'set:eyes:left_nystagmus': controls.eyes.left.nystagmus});
@@ -1364,7 +1377,8 @@ console.dir(params);
 							var position = $('#eye-position-select').val();
 							var blink = $('#eye-blink-select').val();
 							var pupil = $('#pupil-slider').slider('value');
-						var plr = $('#eye-plr-select').val();
+						var plr_exposed = $('#eye-plr-exposed-select').val();
+						var plr_consensual = $('#eye-plr-consensual-select').val();
 						var menace = $('#eye-menace-select').val();
 						var palpebral = $('#eye-palpebral-select').val();
 						var nystagmus = $('#eye-nystagmus-select').val();
@@ -1375,7 +1389,8 @@ console.dir(params);
 						controls.eyes.left.position = position;
 						controls.eyes.left.blink = blink;
 						controls.eyes.left.pupil = pupil;
-						controls.eyes.left.plr = plr;
+						controls.eyes.left.plr_exposed = plr_exposed;
+						controls.eyes.left.plr_consensual = plr_consensual;
 						controls.eyes.left.menace = menace;
 						controls.eyes.left.palpebral = palpebral;
 						controls.eyes.left.nystagmus = nystagmus;
@@ -1385,7 +1400,8 @@ console.dir(params);
 						controls.eyes.right.position = position;
 						controls.eyes.right.blink = blink;
 						controls.eyes.right.pupil = pupil;
-						controls.eyes.right.plr = plr;
+						controls.eyes.right.plr_exposed = plr_exposed;
+						controls.eyes.right.plr_consensual = plr_consensual;
 						controls.eyes.right.menace = menace;
 						controls.eyes.right.palpebral = palpebral;
 						controls.eyes.right.nystagmus = nystagmus;
@@ -1403,11 +1419,13 @@ console.dir(params);
 						simmgr.sendChange({'set:eyes:right_position': position});
 						simmgr.sendChange({'set:eyes:right_blink': blink});
 						simmgr.sendChange({'set:eyes:right_pupil': pupil});
-						simmgr.sendChange({'set:eyes:left_plr': plr});
+						simmgr.sendChange({'set:eyes:left_plr_exposed': plr_exposed});
+						simmgr.sendChange({'set:eyes:left_plr_consensual': plr_consensual});
 						simmgr.sendChange({'set:eyes:left_menace': menace});
 						simmgr.sendChange({'set:eyes:left_palpebral': palpebral});
 						simmgr.sendChange({'set:eyes:left_nystagmus': nystagmus});
-						simmgr.sendChange({'set:eyes:right_plr': plr});
+						simmgr.sendChange({'set:eyes:right_plr_exposed': plr_exposed});
+						simmgr.sendChange({'set:eyes:right_plr_consensual': plr_consensual});
 						simmgr.sendChange({'set:eyes:right_menace': menace});
 						simmgr.sendChange({'set:eyes:right_palpebral': palpebral});
 						simmgr.sendChange({'set:eyes:right_nystagmus': nystagmus});
