@@ -219,7 +219,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 		<div class="control-modal-div eye-button-row">
 			<button class="red-button modal-button apply">Apply</button>
 			<button class="red-button modal-button sync">Apply Both</button>
-			<button class="red-button modal-button cancel">Close</button>
+			<button class="red-button modal-button cancel">Cancel</button>
 		</div>
 	';
 
