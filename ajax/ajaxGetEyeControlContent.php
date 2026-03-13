@@ -82,7 +82,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 	$moveOptions = array(
 		"Normal" => 0,
 		"Infrequent Slow" => 1,
-		"None" => 2
+		"None" => 2,
+		"Drift Right" => 3,
+		"Drift Left"  => 4,
+		"Drift Up"    => 5,
+		"Drift Down"  => 6
 	);
 
 	$moveSelect = '<select id="eye-move-select" class="modal-select">';
